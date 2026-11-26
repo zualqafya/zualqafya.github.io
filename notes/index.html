@@ -1,0 +1,8 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>المذكرات | ذو القافية</title><meta name="theme-color" content="#0b0a08"><link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/style.css?v=12"><link rel="stylesheet" href="/quiz/quiz.css?v=2"><link rel="stylesheet" href="/notes/n.css?v=3"></head><body class="qbody qx" style="background:#0b0a08">
+<nav class="top"><a class="logo" href="/">ق</a><div class="links"><a href="/">الرئيسية</a><a href="/manahej/">المناهج</a></div><a class="navbtn" href="/">الرئيسية</a></nav>
+<main class="qwrap"><div class="qcard" style="text-align:center"><h1 style="color:#f2cf7a;margin:12px 0 4px;font-size:28px">المذكرات</h1><p style="color:#b9a46a;margin:0">اضغط على المذكرة، وبعدين اختار تقرأها أو تحمّلها.</p><div class="nlist" id="nl"></div></div></main>
+<script src="/notes/memos.js?v=2"></script>
+<script>
+document.getElementById('nl').innerHTML=MEMOS.map(function(m){return '<div class="memo"><button type="button" aria-expanded="false"><span class="mi">📖</span><span class="mt"><b>'+m.title+'</b><span>'+(m.sub||'')+'</span></span><span class="mc">◂</span></button><div class="mact">'+(m.read||m.pdf?'<a href="'+(m.read||m.pdf)+'"'+(m.read?'':' target="_blank" rel="noopener"')+'><i>👁</i>قراءة</a>':'<a class="off"><i>👁</i>قراءة</a>')+(m.pdf?'<a href="'+m.pdf+'" download><i>⬇</i>تحميل</a>':'<a class="off"><i>⬇</i>تحميل</a>')+'</div></div>'}).join('');
+document.querySelectorAll('.memo>button').forEach(function(b){b.onclick=function(){var p=b.parentNode,o=p.classList.toggle('open');b.setAttribute('aria-expanded',o)}});
+</script></body></html>

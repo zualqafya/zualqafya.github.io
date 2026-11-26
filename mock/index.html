@@ -1,0 +1,101 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#0b0a08"><title>نموذج تجريبي: حسابات الطلبة</title>
+<style>
+@font-face{font-family:Tajawal;font-weight:400;src:url(/fonts/Tajawal-Regular.ttf) format("truetype");font-display:swap}
+@font-face{font-family:Tajawal;font-weight:500;src:url(/fonts/Tajawal-Medium.ttf) format("truetype");font-display:swap}
+@font-face{font-family:Tajawal;font-weight:700;src:url(/fonts/Tajawal-Bold.ttf) format("truetype");font-display:swap}
+:root{--g:#e3b04b;--g2:#f2cf7a;--bg:#0b0a08;--card:#15120c;--line:#3a2f17;--tx:#f6ecd2;--mu:#a99c78;--er:#ff7f8f;--ok:#2fbf8f}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:radial-gradient(circle at 80% -10%,#2a1f0a,transparent 50%),var(--bg);color:var(--tx);font:400 16px/1.7 Tajawal,"Segoe UI",Tahoma,sans-serif;min-height:100vh;padding-bottom:40px}
+.demo{background:#1d1507;border-bottom:1px solid #e3b04b44;color:var(--g);font-size:12.5px;text-align:center;padding:6px 10px}
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;max-width:480px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--g2)}.logo i{font-style:normal;width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(150deg,#f2cf7a,#b8892e);color:#2a1c04;font-size:20px}
+.seg{display:flex;gap:4px;padding:4px;margin:0 16px 10px;max-width:448px;margin-inline:auto;background:#100d07;border:1px solid var(--line);border-radius:14px;overflow-x:auto;scrollbar-width:none}
+.seg button{flex:1 0 auto;font:inherit;font-size:13.5px;font-weight:500;padding:8px 12px;border:0;border-radius:10px;background:transparent;color:var(--mu);position:relative;white-space:nowrap}
+.seg button.on{background:linear-gradient(150deg,#f2cf7a,#c99a3a);color:#2a1c04;font-weight:700}
+.dot{position:absolute;top:2px;left:4px;min-width:18px;height:18px;border-radius:9px;background:#e0455a;color:#fff;font-size:11px;line-height:18px;text-align:center;display:none}
+.scr{display:none;max-width:480px;margin:0 auto;padding:6px 16px;animation:in .3s}.scr.on{display:block}@keyframes in{from{opacity:0;transform:translateY(8px)}}
+h1{font-size:24px;margin:12px 0 2px;color:var(--g2)}.sub{color:var(--mu);font-size:14px;margin:0 0 12px}
+.card{background:linear-gradient(160deg,#1c170c,#110e08);border:1px solid var(--line);border-radius:18px;padding:18px;margin:12px 0;box-shadow:0 12px 30px -14px #000}
+.f{margin-top:14px}.f label{display:block;font-size:13.5px;font-weight:500;color:#d6c8a0;margin-bottom:5px}.f label small{color:var(--mu);font-weight:400}
+.in{position:relative}.in input,.in select{width:100%;font:inherit;color:var(--tx);background:#0e0b06;border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;min-height:50px;outline:0;transition:border .2s,box-shadow .2s}
+.in input:focus,.in select:focus{border-color:var(--g);box-shadow:0 0 0 3px #e3b04b2a}
+.in input.bad{border-color:var(--er)}.in input.good{border-color:#2f8f6f}
+.num{direction:ltr;text-align:right}
+.eye{position:absolute;left:8px;top:7px;width:36px;height:36px;border:0;background:transparent;color:var(--mu);font-size:18px}
+.err{color:var(--er);font-size:12.5px;min-height:18px;margin-top:3px}
+.btn{display:block;width:100%;margin-top:18px;font:inherit;font-weight:700;font-size:17px;min-height:52px;border:0;border-radius:14px;background:linear-gradient(150deg,#f2cf7a,#c99a3a);color:#2a1c04;box-shadow:0 8px 20px -8px #e3b04b88;transition:transform .15s,filter .15s}.btn:active{transform:scale(.98)}
+.btn.o{background:transparent;border:1.5px solid var(--g);color:var(--g2);box-shadow:none}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:1px 10px;border-radius:99px;border:1px solid}
+.p-w{color:#ffcf6b;border-color:#8a6a1c;background:#3a2a08}.p-o{color:#7be3bd;border-color:#1f6a50;background:#0f2e22}.p-n{color:#ff9aa8;border-color:#7a2a38;background:#2e0f16}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #2a2311}.row:last-child{border:0}
+.row b{font-weight:500}.mu{color:var(--mu);font-size:13px}
+.bar{height:7px;background:#241d0d;border-radius:9px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:linear-gradient(90deg,#b8892e,#f2cf7a)}
+.mini{font:inherit;font-size:13px;font-weight:700;padding:5px 14px;border-radius:99px;border:1px solid;background:transparent}.mini.y{color:#7be3bd;border-color:#1f6a50}.mini.n{color:#ff9aa8;border-color:#7a2a38}
+.toast{position:fixed;top:12px;left:50%;transform:translate(-50%,-140%);width:min(440px,94vw);background:#1a140a;border:1px solid var(--g);border-radius:14px;padding:12px 14px;box-shadow:0 14px 40px #000;z-index:20;transition:transform .45s cubic-bezier(.2,.9,.3,1.2)}.toast.on{transform:translate(-50%,0)}
+.toast b{color:var(--g2)}.toast small{display:block;color:var(--mu)}
+.ok-ic{width:64px;height:64px;border-radius:20px;margin:6px auto;display:grid;place-items:center;font-size:34px;background:linear-gradient(150deg,#7be3bd,#1f8f6a);color:#06251a}
+.tc{text-align:center}.hint{font-size:12.5px;color:var(--mu);margin-top:10px}
+.who{display:flex;align-items:center;gap:12px}.av{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-weight:700;background:linear-gradient(150deg,#f2cf7a,#b8892e);color:#2a1c04;font-size:20px}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat div{background:#0e0b06;border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}.stat b{display:block;font-size:22px;color:var(--g2)}
+</style></head><body>
+<div class="demo">نموذج تجريبي للتصميم فقط. بيانات وهمية ومفيش حاجة بتتحفظ. متكتبش أرقام حقيقية.</div>
+<header><div class="logo"><i>ق</i>ذو القافية</div><span class="mu">منصة الطلبة</span></header>
+<div class="seg" id="seg"></div>
+<div class="toast" id="toast"><b>🔔 طلب ربط جديد</b><small id="tmsg"></small></div>
+
+<section class="scr" id="s1"><h1>إنشاء حساب طالب</h1><p class="sub">دخولك هيبقى برقم موبايلك.</p>
+<form class="card" id="f" novalidate>
+<div class="f"><label>الاسم</label><div class="in"><input id="nm" autocomplete="off" placeholder="الاسم بالكامل (وهمي)"></div><div class="err" id="e_nm"></div></div>
+<div class="f"><label>الصف</label><div class="in"><select id="gr"><option value="">اختار صفك</option><option>أولى ثانوي</option><option>تانية ثانوي</option><option>تالتة ثانوي</option></select></div><div class="err" id="e_gr"></div></div>
+<div class="f"><label>رقم الطالب <small>(هو اللي هتدخل بيه)</small></label><div class="in"><input class="num" id="sp" inputmode="numeric" maxlength="11" placeholder="01xxxxxxxxx"></div><div class="err" id="e_sp"></div></div>
+<div class="f"><label>رقم ولي الأمر</label><div class="in"><input class="num" id="pp" inputmode="numeric" maxlength="11" placeholder="01xxxxxxxxx"></div><div class="err" id="e_pp"></div></div>
+<div class="f"><label>الإيميل <small>(اختياري، لاسترجاع كلمة السر)</small></label><div class="in"><input class="num" id="em" type="email" placeholder="name@example.com"></div><div class="err" id="e_em"></div></div>
+<div class="f"><label>كلمة السر</label><div class="in"><input class="num" id="pw" type="password" placeholder="٨ أحرف على الأقل"><button type="button" class="eye" data-t="pw">👁</button></div><div class="err" id="e_pw"></div></div>
+<div class="f"><label>تأكيد كلمة السر</label><div class="in"><input class="num" id="pc" type="password" placeholder="اكتبها تاني"><button type="button" class="eye" data-t="pc">👁</button></div><div class="err" id="e_pc"></div></div>
+<button class="btn" type="submit">إنشاء الحساب</button>
+<p class="hint">اختيار الصف مرة واحدة وبيحدد المنهج اللي هتشوفه. رقم ولي الأمر بيتبعت لأ/ أمين للمراجعة قبل الربط.</p></form></section>
+
+<section class="scr" id="s2"><div class="card tc"><div class="ok-ic">✓</div><h1 style="margin-top:4px">تم إنشاء الحساب</h1><p class="sub">دخولك برقم: <span class="num" id="ok_ph" style="display:inline-block"></span></p>
+<span class="pill p-w">طلب ربط ولي الأمر قيد المراجعة</span><p class="hint">الرقم لوحده مش بيدّي ولي الأمر أي صلاحية. أ/ أمين بيتأكد بنفسه الأول وبعدها بتوصلك الموافقة.</p>
+<button class="btn" onclick="show(3)">دخول لصفحتي</button></div></section>
+
+<section class="scr" id="s3"><div class="who card"><div class="av" id="av">م</div><div><b id="hi" style="font-size:18px"></b><div class="mu" id="hg"></div></div></div>
+<div class="card"><b>منهج صفك</b><div class="row"><span>بلاغة: الحقيقة والمجاز</span><span class="pill p-w">تجريبي</span></div><div class="row"><span>بلاغة: التشبيه</span><span class="pill p-w">تجريبي</span></div><div class="row"><span>بلاغة: الاستعارة</span><span class="pill p-w">تجريبي</span></div></div>
+<div class="card"><b>نتايجي (وهمية)</b><div class="row"><span>الحقيقة والمجاز</span><b>٦٢ / ٧٥</b></div><div class="bar"><i style="width:83%"></i></div><div class="row"><span>التشبيه</span><b>٥٤ / ٧٥</b></div><div class="bar"><i style="width:72%"></i></div></div>
+<div class="card"><div class="row"><span>ولي الأمر</span><span class="pill p-w" id="ls">قيد المراجعة</span></div></div></section>
+
+<section class="scr" id="s4"><h1>شاشة ولي الأمر</h1><p class="sub">بيشوف ابنه المربوط بس.</p>
+<div class="card"><div class="who"><div class="av">م</div><div><b>محمد (وهمي)</b><div class="mu">أولى ثانوي</div></div></div></div>
+<div class="stat"><div><b>٦٢ / ٧٥</b><span class="mu">الحقيقة والمجاز</span></div><div><b>٥٤ / ٧٥</b><span class="mu">التشبيه</span></div><div><b>٧ من ٨</b><span class="mu">حضور الشهر</span></div><div><b style="color:var(--er)">الأحد</b><span class="mu">آخر غياب</span></div></div></section>
+
+<section class="scr" id="s5"><h1>شاشة المدرس</h1><p class="sub">أ/ أمين محمود قَنْعَر</p>
+<div class="card"><b>طلبات ربط ولي الأمر</b><div id="reqs"><div class="row" id="rq0"><div><b>سارة (وهمية)</b><div class="mu num" style="direction:ltr;text-align:right">ولي أمر: 010 0000 0002</div></div><span><button class="mini y" onclick="dec('rq0',1)">موافقة</button> <button class="mini n" onclick="dec('rq0',0)">رفض</button></span></div></div></div>
+<div class="card"><b>تسجيل الحضور</b><div class="row"><b>محمد (وهمي)</b><span id="at1"><button class="mini y" onclick="at('at1',1)">حاضر</button> <button class="mini n" onclick="at('at1',0)">غائب</button></span></div><div class="row"><b>سارة (وهمية)</b><span id="at2"><button class="mini y" onclick="at('at2',1)">حاضر</button> <button class="mini n" onclick="at('at2',0)">غائب</button></span></div></div>
+<div class="card"><b>إعادة تعيين كلمة سر طالب</b><button class="btn o" onclick="this.textContent='تم (شكل تجريبي)'">إعادة التعيين</button></div></section>
+<script>
+var $=function(i){return document.getElementById(i)},cur=1,pend=0,names=['تسجيل طالب','صفحة الطالب','ولي الأمر','المدرس'],map=[1,3,4,5];
+var seg=$('seg');map.forEach(function(n,i){var b=document.createElement('button');b.textContent=names[i];b.dataset.n=n;b.onclick=function(){show(n)};if(n==5){var d=document.createElement('span');d.className='dot';d.id='dot';b.appendChild(d)}seg.appendChild(b)});
+function show(n){document.querySelectorAll('.scr').forEach(function(e,i){e.classList.toggle('on',i==n-1)});document.querySelectorAll('#seg button').forEach(function(b){b.classList.toggle('on',b.dataset.n==n||(n==2&&b.dataset.n==1))});scrollTo(0,0)}
+document.querySelectorAll('.eye').forEach(function(b){b.onclick=function(){var i=$(b.dataset.t);i.type=i.type=='password'?'text':'password'}});
+var ph=/^01[0125][0-9]{8}$/,ar='٠١٢٣٤٥٦٧٨٩';function norm(s){return s.replace(/[٠-٩]/g,function(c){return ar.indexOf(c)}).replace(/\s|-/g,'')}
+function set(id,m){$('e_'+id).textContent=m||'';var i=$(id);i.classList.toggle('bad',!!m);i.classList.toggle('good',!m&&!!i.value)}
+function chk(){var ok=true,v=function(id,m){set(id,m);if(m)ok=false};
+var nm=$('nm').value.trim();v('nm',nm.length<3?'اكتب اسمك بالكامل':'');
+v('gr',$('gr').value?'':'اختار الصف');$('e_gr').textContent=$('gr').value?'':'اختار الصف';
+var s=norm($('sp').value),p=norm($('pp').value);
+v('sp',!ph.test(s)?'رقم موبايل مصري صحيح (11 رقم يبدأ بـ 01)':'');
+v('pp',!ph.test(p)?'رقم موبايل مصري صحيح (11 رقم يبدأ بـ 01)':(s&&s==p?'رقم ولي الأمر لازم يكون مختلف عن رقم الطالب':''));
+var e=$('em').value.trim();v('em',e&&!/^\S+@\S+\.\S+$/.test(e)?'الإيميل مش مظبوط':'');
+v('pw',$('pw').value.length<8?'٨ أحرف على الأقل':'');
+v('pc',$('pc').value!=$('pw').value||!$('pc').value?'كلمتا السر مش متطابقتين':'');return ok}
+['nm','gr','sp','pp','em','pw','pc'].forEach(function(i){$(i).addEventListener('input',function(){if($('e_'+i).textContent)chk()})});
+$('f').onsubmit=function(ev){ev.preventDefault();if(!chk()){var b=document.querySelector('.bad');if(b)b.scrollIntoView({block:'center'});return}
+var nm=$('nm').value.trim(),s=norm($('sp').value);$('ok_ph').textContent=s;$('hi').textContent=nm;$('av').textContent=nm.charAt(0);$('hg').textContent=$('gr').value;
+var r=document.createElement('div');r.className='row';r.id='rqn';r.innerHTML='<div><b></b><div class="mu" style="direction:ltr;text-align:right">ولي أمر: <span></span> <span class="pill p-w">جديد</span></div></div><span><button class="mini y" onclick="dec(\'rqn\',1)">موافقة</button> <button class="mini n" onclick="dec(\'rqn\',0)">رفض</button></span>';
+r.querySelector('b').textContent=nm;r.querySelectorAll('span')[0].textContent=norm($('pp').value).replace(/(\d{3})(\d{4})(\d{4})/,'$1 $2 $3');$('reqs').insertBefore(r,$('reqs').firstChild);
+pend++;var d=$('dot');d.style.display='block';d.textContent=pend;
+$('tmsg').textContent=nm+' بعتلك طلب ربط ولي أمر. راجعه ووافق.';$('toast').classList.add('on');setTimeout(function(){$('toast').classList.remove('on')},4200);show(2)};
+function dec(id,y){var r=$(id);r.lastElementChild.innerHTML='<span class="pill '+(y?'p-o':'p-n')+'">'+(y?'تمت الموافقة':'مرفوض')+'</span>';if(id=='rqn'){$('ls').className='pill '+(y?'p-o':'p-n');$('ls').textContent=y?'تم الربط':'مرفوض'}if(pend>0){pend--;$('dot').textContent=pend;if(!pend)$('dot').style.display='none'}}
+function at(id,y){$(id).innerHTML='<span class="pill '+(y?'p-o':'p-n')+'">'+(y?'حاضر':'غائب')+'</span>'}
+show(1);
+</script></body></html>

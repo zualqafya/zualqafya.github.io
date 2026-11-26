@@ -1,0 +1,30 @@
+.nlist{display:grid;gap:12px;margin-top:18px;text-align:right}
+.memo{border:1px solid #e3b04b66;border-radius:16px;background:linear-gradient(160deg,#14110b,#0b0a08);overflow:hidden}
+.memo>button{all:unset;box-sizing:border-box;width:100%;display:flex;align-items:center;gap:12px;padding:14px;cursor:pointer}
+
+.memo .mt{flex:1}
+.memo .mt b{display:block;font-size:18px;color:#f6dc94}
+.memo .mt span{font-size:13.5px;color:#b9a46a}
+.memo .mc{color:#e3b04b;transition:transform .25s}
+.memo.open .mc{transform:rotate(-90deg)}
+.mact{display:none;gap:10px;padding:0 14px 14px}
+.memo.open .mact{display:flex}
+.mact a{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 6px;border:1px solid #e3b04b66;border-radius:12px;background:#100d08;color:#f6dc94;text-decoration:none;font-weight:700;font-size:15px}
+
+.mact a:hover,.mact a:active{border-color:#f6dc94;background:#1a1407}
+.mact a.off{opacity:.45;pointer-events:none}
+
+.gi,.memo .mi,.mact a i{position:relative;display:grid;place-items:center;flex:none;font-style:normal;color:#fff;border-radius:16px;overflow:hidden;
+ background:linear-gradient(145deg,rgba(255,236,170,.85),rgba(240,190,80,.55) 48%,rgba(160,105,20,.6));
+ border:1px solid rgba(246,220,148,.65);
+ -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+ box-shadow:0 10px 22px -6px rgba(0,0,0,.75),0 0 26px rgba(246,200,90,.75),0 0 50px -6px rgba(246,200,90,.5),inset 0 1px 0 rgba(255,255,255,.9),inset 0 0 18px rgba(255,230,150,.45),inset 0 -10px 16px rgba(120,80,10,.35);
+ text-shadow:0 2px 6px rgba(0,0,0,.5),0 0 14px #fff;transition:transform .25s,box-shadow .25s}
+.memo .mi{width:54px;height:54px;font-size:25px}
+.mact a i{width:50px;height:50px;font-size:23px}
+.gi:before,.memo .mi:before,.mact a i:before{content:"";position:absolute;inset:0 0 52% 0;background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,.05));border-radius:16px 16px 60% 60%/16px 16px 22px 22px}
+.gi:after,.memo .mi:after,.mact a i:after{content:"";position:absolute;top:-30%;left:-60%;width:40%;height:160%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:rotate(18deg);transition:left .6s}
+.memo>button:hover .mi,.memo>button:active .mi,.mact a:hover i,.mact a:active i{transform:translateY(-4px);box-shadow:0 16px 26px -6px rgba(0,0,0,.8),0 0 26px rgba(246,220,148,.5),inset 0 1px 0 rgba(255,255,255,.7),inset 0 -10px 16px rgba(120,80,10,.35)}
+.memo>button:hover .mi:after,.memo>button:active .mi:after,.mact a:hover i:after,.mact a:active i:after{left:130%}
+.memo{box-shadow:0 14px 30px -14px #000,inset 0 1px 0 rgba(246,220,148,.18)}
+.memo{border-color:#f0c25a99;box-shadow:0 14px 30px -14px #000,0 0 22px -6px rgba(240,194,90,.45),inset 0 1px 0 rgba(246,220,148,.3)}
